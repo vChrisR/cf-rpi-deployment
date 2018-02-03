@@ -1202,7 +1202,7 @@ instance_groups:
   vm_type: minimal
 - azs:
   - lab
-  instances: 4
+  instances: 1
   jobs:
   - name: doppler
     properties:
