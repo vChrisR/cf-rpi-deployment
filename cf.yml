@@ -1409,7 +1409,7 @@ instance_groups:
         client_secret: ((uaa_clients_tcp_emitter_secret))
     release: diego-rpi
   - name: garden-cni
-    release: cf-networkingrpi
+    release: cf-networking-rpi
   - name: netmon
     release: cf-networking-rpi
   - name: vxlan-policy-agent
