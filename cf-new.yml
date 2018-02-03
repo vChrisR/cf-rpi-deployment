@@ -25,59 +25,59 @@ addons:
     properties:
       aliases:
         _.cell.service.cf.internal:
-        - _.diego-cell.default.cf.bosh
-        - _.windows-cell.default.cf.bosh
-        - _.windows2016-cell.default.cf.bosh
-        - _.isolated-diego-cell.default.cf.bosh
+        - _.diego-cell.vmnet.cf.bosh
+        - _.windows-cell.vmnet.cf.bosh
+        - _.windows2016-cell.vmnet.cf.bosh
+        - _.isolated-diego-cell.vmnet.cf.bosh
         auctioneer.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         bbs.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         bits-service.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         blobstore.service.cf.internal:
-        - '*.blobstore.default.cf.bosh'
-        - '*.singleton-blobstore.default.cf.bosh'
+        - '*.blobstore.vmnet.cf.bosh'
+        - '*.singleton-blobstore.vmnet.cf.bosh'
         cc-uploader.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         cf-etcd.service.cf.internal:
-        - '*.etcd.default.cf.bosh'
+        - '*.etcd.vmnet.cf.bosh'
         cloud-controller-ng.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         consul.service.cf.internal:
-        - '*.consul.default.cf.bosh'
+        - '*.consul.vmnet.cf.bosh'
         credhub.service.cf.internal:
-        - '*.credhub.default.cf.bosh'
+        - '*.credhub.vmnet.cf.bosh'
         doppler.service.cf.internal:
-        - '*.doppler.default.cf.bosh'
+        - '*.doppler.vmnet.cf.bosh'
         file-server.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         gorouter.service.cf.internal:
-        - '*.router.default.cf.bosh'
+        - '*.router.vmnet.cf.bosh'
         locket.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         loggregator-trafficcontroller.service.cf.internal:
-        - '*.log-api.default.cf.bosh'
+        - '*.log-api.vmnet.cf.bosh'
         policy-server.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         reverse-log-proxy.service.cf.internal:
-        - '*.log-api.default.cf.bosh'
+        - '*.log-api.vmnet.cf.bosh'
         routing-api.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         silk-controller.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         sql-db.service.cf.internal:
-        - '*.mysql.default.cf.bosh'
-        - '*.postgres.default.cf.bosh'
-        - '*.database.default.cf.bosh'
+        - '*.mysql.vmnet.cf.bosh'
+        - '*.postgres.vmnet.cf.bosh'
+        - '*.database.vmnet.cf.bosh'
         ssh-proxy.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         tcp-router.service.cf.internal:
-        - '*.tcp-router.default.cf.bosh'
+        - '*.tcp-router.vmnet.cf.bosh'
         tps.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         uaa.service.cf.internal:
-        - '*.uaa.default.cf.bosh'
+        - '*.uaa.vmnet.cf.bosh'
     release: bosh-dns
   name: bosh-dns
 - include:
@@ -88,59 +88,59 @@ addons:
     properties:
       aliases:
         _.cell.service.cf.internal:
-        - _.diego-cell.default.cf.bosh
-        - _.windows-cell.default.cf.bosh
-        - _.windows2016-cell.default.cf.bosh
-        - _.isolated-diego-cell.default.cf.bosh
+        - _.diego-cell.vmnet.cf.bosh
+        - _.windows-cell.vmnet.cf.bosh
+        - _.windows2016-cell.vmnet.cf.bosh
+        - _.isolated-diego-cell.vmnet.cf.bosh
         auctioneer.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         bbs.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         bits-service.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         blobstore.service.cf.internal:
-        - '*.blobstore.default.cf.bosh'
-        - '*.singleton-blobstore.default.cf.bosh'
+        - '*.blobstore.vmnet.cf.bosh'
+        - '*.singleton-blobstore.vmnet.cf.bosh'
         cc-uploader.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         cf-etcd.service.cf.internal:
-        - '*.etcd.default.cf.bosh'
+        - '*.etcd.vmnet.cf.bosh'
         cloud-controller-ng.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         consul.service.cf.internal:
-        - '*.consul.default.cf.bosh'
+        - '*.consul.vmnet.cf.bosh'
         credhub.service.cf.internal:
-        - '*.credhub.default.cf.bosh'
+        - '*.credhub.vmnet.cf.bosh'
         doppler.service.cf.internal:
-        - '*.doppler.default.cf.bosh'
+        - '*.doppler.vmnet.cf.bosh'
         file-server.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         gorouter.service.cf.internal:
-        - '*.router.default.cf.bosh'
+        - '*.router.vmnet.cf.bosh'
         locket.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         loggregator-trafficcontroller.service.cf.internal:
-        - '*.log-api.default.cf.bosh'
+        - '*.log-api.vmnet.cf.bosh'
         policy-server.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         reverse-log-proxy.service.cf.internal:
-        - '*.log-api.default.cf.bosh'
+        - '*.log-api.vmnet.cf.bosh'
         routing-api.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         silk-controller.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         sql-db.service.cf.internal:
-        - '*.mysql.default.cf.bosh'
-        - '*.postgres.default.cf.bosh'
-        - '*.database.default.cf.bosh'
+        - '*.mysql.vmnet.cf.bosh'
+        - '*.postgres.vmnet.cf.bosh'
+        - '*.database.vmnet.cf.bosh'
         ssh-proxy.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         tcp-router.service.cf.internal:
-        - '*.tcp-router.default.cf.bosh'
+        - '*.tcp-router.vmnet.cf.bosh'
         tps.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         uaa.service.cf.internal:
-        - '*.uaa.default.cf.bosh'
+        - '*.uaa.vmnet.cf.bosh'
     release: bosh-dns
   name: bosh-dns-windows
 - include:
@@ -151,59 +151,59 @@ addons:
     properties:
       aliases:
         _.cell.service.cf.internal:
-        - _.diego-cell.default.cf.bosh
-        - _.windows-cell.default.cf.bosh
-        - _.windows2016-cell.default.cf.bosh
-        - _.isolated-diego-cell.default.cf.bosh
+        - _.diego-cell.vmnet.cf.bosh
+        - _.windows-cell.vmnet.cf.bosh
+        - _.windows2016-cell.vmnet.cf.bosh
+        - _.isolated-diego-cell.vmnet.cf.bosh
         auctioneer.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         bbs.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         bits-service.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         blobstore.service.cf.internal:
-        - '*.blobstore.default.cf.bosh'
-        - '*.singleton-blobstore.default.cf.bosh'
+        - '*.blobstore.vmnet.cf.bosh'
+        - '*.singleton-blobstore.vmnet.cf.bosh'
         cc-uploader.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         cf-etcd.service.cf.internal:
-        - '*.etcd.default.cf.bosh'
+        - '*.etcd.vmnet.cf.bosh'
         cloud-controller-ng.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         consul.service.cf.internal:
-        - '*.consul.default.cf.bosh'
+        - '*.consul.vmnet.cf.bosh'
         credhub.service.cf.internal:
-        - '*.credhub.default.cf.bosh'
+        - '*.credhub.vmnet.cf.bosh'
         doppler.service.cf.internal:
-        - '*.doppler.default.cf.bosh'
+        - '*.doppler.vmnet.cf.bosh'
         file-server.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         gorouter.service.cf.internal:
-        - '*.router.default.cf.bosh'
+        - '*.router.vmnet.cf.bosh'
         locket.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         loggregator-trafficcontroller.service.cf.internal:
-        - '*.log-api.default.cf.bosh'
+        - '*.log-api.vmnet.cf.bosh'
         policy-server.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         reverse-log-proxy.service.cf.internal:
-        - '*.log-api.default.cf.bosh'
+        - '*.log-api.vmnet.cf.bosh'
         routing-api.service.cf.internal:
-        - '*.api.default.cf.bosh'
+        - '*.api.vmnet.cf.bosh'
         silk-controller.service.cf.internal:
-        - '*.diego-api.default.cf.bosh'
+        - '*.diego-api.vmnet.cf.bosh'
         sql-db.service.cf.internal:
-        - '*.mysql.default.cf.bosh'
-        - '*.postgres.default.cf.bosh'
-        - '*.database.default.cf.bosh'
+        - '*.mysql.vmnet.cf.bosh'
+        - '*.postgres.vmnet.cf.bosh'
+        - '*.database.vmnet.cf.bosh'
         ssh-proxy.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         tcp-router.service.cf.internal:
-        - '*.tcp-router.default.cf.bosh'
+        - '*.tcp-router.vmnet.cf.bosh'
         tps.service.cf.internal:
-        - '*.scheduler.default.cf.bosh'
+        - '*.scheduler.vmnet.cf.bosh'
         uaa.service.cf.internal:
-        - '*.uaa.default.cf.bosh'
+        - '*.uaa.vmnet.cf.bosh'
     release: bosh-dns
   name: bosh-dns-windows
 instance_groups:
