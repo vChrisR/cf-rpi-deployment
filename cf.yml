@@ -1683,7 +1683,6 @@ stemcells:
 - alias: default
   os: ubuntu-trusty
   version: "3468.19"
-stemcells:
 - alias: rpi
   os: raspbian
   version: "0000"
