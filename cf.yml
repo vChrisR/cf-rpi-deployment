@@ -731,6 +731,8 @@ instance_groups:
         stacks:
         - description: Cloud Foundry Linux-based filesystem
           name: cflinuxfs2
+        - description: CF ARM Linux-based filesystem
+          name: cflinuxfs2-armhf
         staging_upload_password: ((cc_staging_upload_password))
         staging_upload_user: staging_user
       ccdb:
@@ -1328,15 +1330,14 @@ instance_groups:
   networks:
   - name: vmnet
   stemcell: default
-  ephemeral_disk_type: 100GB
-  vm_type: small-highmem
+  vm_type: small-highmem-highdisk
 
 - azs:
   - rpi
   instances: 1
   jobs:
   - name: cflinuxfs2-rootfs-setup
-    release: cflinuxfs2
+    release: cflinuxfs2-armhf
   - name: garden
     properties:
       garden:
@@ -1366,7 +1367,7 @@ instance_groups:
           locket:
             api_location: locket.service.cf.internal:8891
           preloaded_rootfses:
-          - cflinuxfs2:/var/vcap/packages/cflinuxfs2/rootfs.tar
+          - cflinuxfs2-armhf:/var/vcap/packages/cflinuxfs2/rootfs.tar
           require_tls: true
           server_cert: ((diego_rep_agent.certificate))
           server_key: ((diego_rep_agent.private_key))
@@ -1434,7 +1435,6 @@ instance_groups:
   networks:
   - name: rpinet
   stemcell: rpi
-  ephemeral_disk_type: 1GB
   vm_type: rpi
 
 - azs:
@@ -1673,11 +1673,13 @@ releases:
   sha1: 9231b7c7d2f6aa85e0cb77fdeef7add54fdb3f1a
   url: https://bosh.io/d/github.com/cloudfoundry/bosh-dns-release?v=0.2.0
   version: 0.2.0
-- name: diego-rpi
-  version: latest
 - name: garden-runc-rpi
   version: latest
+- name: diego-rpi
+  version: latest
 - name: cf-networking-rpi
+  version: latest
+- name: cflinuxfs2-armhf
   version: latest
 stemcells:
 - alias: default
@@ -1685,8 +1687,7 @@ stemcells:
   version: "3468.19"
 - alias: rpi
   os: raspbian
-  version: "0000"
-
+  version: latest
 update:
   canaries: 1
   canary_watch_time: 30000-1200000
