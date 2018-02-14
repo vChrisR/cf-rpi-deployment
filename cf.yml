@@ -18,20 +18,20 @@ addons:
     release: loggregator
   name: metron_agent
 
-- include:
-    stemcell:
-    - os: raspbian
-  jobs:
-  - name: metron_agent
-    properties:
-      loggregator:
-        tls:
-          ca_cert: ((loggregator_ca.certificate))
-          metron:
-            cert: ((loggregator_tls_metron.certificate))
-            key: ((loggregator_tls_metron.private_key))
-    release: loggregator-rpi
-  name: metron_agent
+# - include:
+#     stemcell:
+#     - os: raspbian
+#   jobs:
+#   - name: metron_agent
+#     properties:
+#       loggregator:
+#         tls:
+#           ca_cert: ((loggregator_ca.certificate))
+#           metron:
+#             cert: ((loggregator_tls_metron.certificate))
+#             key: ((loggregator_tls_metron.private_key))
+#     release: loggregator-rpi
+#   name: metron_agent
 
 - include:
     stemcell:
@@ -97,69 +97,69 @@ addons:
     release: bosh-dns
   name: bosh-dns
 
-- include:
-    stemcell:
-    - os: raspbian
-  jobs:
-  - name: bosh-dns
-    properties:
-      aliases:
-        _.cell.service.cf.internal:
-        - _.diego-cell.vmnet.cf.bosh
-        - _.windows-cell.vmnet.cf.bosh
-        - _.windows2016-cell.vmnet.cf.bosh
-        - _.isolated-diego-cell.vmnet.cf.bosh
-        auctioneer.service.cf.internal:
-        - '*.scheduler.vmnet.cf.bosh'
-        bbs.service.cf.internal:
-        - '*.diego-api.vmnet.cf.bosh'
-        bits-service.service.cf.internal:
-        - '*.api.vmnet.cf.bosh'
-        blobstore.service.cf.internal:
-        - '*.blobstore.vmnet.cf.bosh'
-        - '*.singleton-blobstore.vmnet.cf.bosh'
-        cc-uploader.service.cf.internal:
-        - '*.api.vmnet.cf.bosh'
-        cf-etcd.service.cf.internal:
-        - '*.etcd.vmnet.cf.bosh'
-        cloud-controller-ng.service.cf.internal:
-        - '*.api.vmnet.cf.bosh'
-        consul.service.cf.internal:
-        - '*.consul.vmnet.cf.bosh'
-        credhub.service.cf.internal:
-        - '*.credhub.vmnet.cf.bosh'
-        doppler.service.cf.internal:
-        - '*.doppler.vmnet.cf.bosh'
-        file-server.service.cf.internal:
-        - '*.api.vmnet.cf.bosh'
-        gorouter.service.cf.internal:
-        - '*.router.vmnet.cf.bosh'
-        locket.service.cf.internal:
-        - '*.diego-api.vmnet.cf.bosh'
-        loggregator-trafficcontroller.service.cf.internal:
-        - '*.log-api.vmnet.cf.bosh'
-        policy-server.service.cf.internal:
-        - '*.api.vmnet.cf.bosh'
-        reverse-log-proxy.service.cf.internal:
-        - '*.log-api.vmnet.cf.bosh'
-        routing-api.service.cf.internal:
-        - '*.api.vmnet.cf.bosh'
-        silk-controller.service.cf.internal:
-        - '*.diego-api.vmnet.cf.bosh'
-        sql-db.service.cf.internal:
-        - '*.mysql.vmnet.cf.bosh'
-        - '*.postgres.vmnet.cf.bosh'
-        - '*.database.vmnet.cf.bosh'
-        ssh-proxy.service.cf.internal:
-        - '*.scheduler.vmnet.cf.bosh'
-        tcp-router.service.cf.internal:
-        - '*.tcp-router.vmnet.cf.bosh'
-        tps.service.cf.internal:
-        - '*.scheduler.vmnet.cf.bosh'
-        uaa.service.cf.internal:
-        - '*.uaa.vmnet.cf.bosh'
-    release: bosh-dns
-  name: bosh-dns-rpi
+# - include:
+#     stemcell:
+#     - os: raspbian
+#   jobs:
+#   - name: bosh-dns
+#     properties:
+#       aliases:
+#         _.cell.service.cf.internal:
+#         - _.diego-cell.vmnet.cf.bosh
+#         - _.windows-cell.vmnet.cf.bosh
+#         - _.windows2016-cell.vmnet.cf.bosh
+#         - _.isolated-diego-cell.vmnet.cf.bosh
+#         auctioneer.service.cf.internal:
+#         - '*.scheduler.vmnet.cf.bosh'
+#         bbs.service.cf.internal:
+#         - '*.diego-api.vmnet.cf.bosh'
+#         bits-service.service.cf.internal:
+#         - '*.api.vmnet.cf.bosh'
+#         blobstore.service.cf.internal:
+#         - '*.blobstore.vmnet.cf.bosh'
+#         - '*.singleton-blobstore.vmnet.cf.bosh'
+#         cc-uploader.service.cf.internal:
+#         - '*.api.vmnet.cf.bosh'
+#         cf-etcd.service.cf.internal:
+#         - '*.etcd.vmnet.cf.bosh'
+#         cloud-controller-ng.service.cf.internal:
+#         - '*.api.vmnet.cf.bosh'
+#         consul.service.cf.internal:
+#         - '*.consul.vmnet.cf.bosh'
+#         credhub.service.cf.internal:
+#         - '*.credhub.vmnet.cf.bosh'
+#         doppler.service.cf.internal:
+#         - '*.doppler.vmnet.cf.bosh'
+#         file-server.service.cf.internal:
+#         - '*.api.vmnet.cf.bosh'
+#         gorouter.service.cf.internal:
+#         - '*.router.vmnet.cf.bosh'
+#         locket.service.cf.internal:
+#         - '*.diego-api.vmnet.cf.bosh'
+#         loggregator-trafficcontroller.service.cf.internal:
+#         - '*.log-api.vmnet.cf.bosh'
+#         policy-server.service.cf.internal:
+#         - '*.api.vmnet.cf.bosh'
+#         reverse-log-proxy.service.cf.internal:
+#         - '*.log-api.vmnet.cf.bosh'
+#         routing-api.service.cf.internal:
+#         - '*.api.vmnet.cf.bosh'
+#         silk-controller.service.cf.internal:
+#         - '*.diego-api.vmnet.cf.bosh'
+#         sql-db.service.cf.internal:
+#         - '*.mysql.vmnet.cf.bosh'
+#         - '*.postgres.vmnet.cf.bosh'
+#         - '*.database.vmnet.cf.bosh'
+#         ssh-proxy.service.cf.internal:
+#         - '*.scheduler.vmnet.cf.bosh'
+#         tcp-router.service.cf.internal:
+#         - '*.tcp-router.vmnet.cf.bosh'
+#         tps.service.cf.internal:
+#         - '*.scheduler.vmnet.cf.bosh'
+#         uaa.service.cf.internal:
+#         - '*.uaa.vmnet.cf.bosh'
+#     release: bosh-dns
+#   name: bosh-dns-rpi
 
 
 - include:
@@ -1414,110 +1414,110 @@ instance_groups:
   stemcell: default
   vm_type: small-highmem-highdisk
 
-- azs:
-  - rpi
-  instances: 1
-  jobs:
-  - name: cflinuxfs2-rootfs-setup
-    release: cflinuxfs2-armhf
-  - name: garden
-    properties:
-      garden:
-        cleanup_process_dirs_on_wait: true
-        debug_listen_address: 127.0.0.1:17019
-        default_container_grace_time: 0
-        deny_networks:
-        - 0.0.0.0/0
-        destroy_containers_on_start: true
-        graph_cleanup_threshold_in_mb: 0
-        network_plugin: /var/vcap/packages/runc-cni/bin/garden-external-networker
-        network_plugin_extra_args:
-        - --configFile=/var/vcap/jobs/garden-cni/config/adapter.json
-        persistent_image_list:
-        - /var/vcap/packages/cflinuxfs2/rootfs.tar
-    release: garden-runc-rpi
-  - name: rep
-    properties:
-      diego:
-        rep:
-          bbs:
-            ca_cert: ((service_cf_internal_ca.certificate))
-            client_cert: ((diego_bbs_client.certificate))
-            client_key: ((diego_bbs_client.private_key))
-          ca_cert: ((service_cf_internal_ca.certificate))
-          enable_legacy_api_endpoints: false
-          locket:
-            api_location: locket.service.cf.internal:8891
-          preloaded_rootfses:
-          - cflinuxfs2-armhf:/var/vcap/packages/cflinuxfs2/rootfs.tar
-          require_tls: true
-          server_cert: ((diego_rep_agent.certificate))
-          server_key: ((diego_rep_agent.private_key))
-      enable_consul_service_registration: false
-      loggregator:
-        ca_cert: ((loggregator_ca.certificate))
-        cert: ((loggregator_tls_metron.certificate))
-        key: ((loggregator_tls_metron.private_key))
-        use_v2_api: true
-      tls:
-        ca_cert: ((service_cf_internal_ca.certificate))
-        cert: ((diego_rep_agent.certificate))
-        key: ((diego_rep_agent.private_key))
-    release: diego-rpi
-  - name: cfdot
-    properties:
-      tls:
-        ca_certificate: ((service_cf_internal_ca.certificate))
-        certificate: ((diego_rep_client.certificate))
-        private_key: ((diego_rep_client.private_key))
-    release: diego-rpi
-  - name: route_emitter
-    properties:
-      diego:
-        route_emitter:
-          bbs:
-            ca_cert: ((service_cf_internal_ca.certificate))
-            client_cert: ((diego_bbs_client.certificate))
-            client_key: ((diego_bbs_client.private_key))
-          local_mode: true
-      loggregator:
-        ca_cert: ((loggregator_ca.certificate))
-        cert: ((loggregator_tls_metron.certificate))
-        key: ((loggregator_tls_metron.private_key))
-        use_v2_api: true
-      tcp:
-        enabled: true
-      uaa:
-        ca_cert: ((uaa_ca.certificate))
-        client_secret: ((uaa_clients_tcp_emitter_secret))
-    release: diego-rpi
-  - name: garden-cni
-    release: cf-networking-rpi
-  - name: netmon
-    release: cf-networking-rpi
-  - name: vxlan-policy-agent
-    properties:
-      cf_networking:
-        vxlan_policy_agent:
-          ca_cert: ((network_policy_ca.certificate))
-          client_cert: ((network_policy_client.certificate))
-          client_key: ((network_policy_client.private_key))
-    release: cf-networking-rpi
-  - name: silk-daemon
-    properties:
-      cf_networking:
-        silk_daemon:
-          ca_cert: ((silk_ca.certificate))
-          client_cert: ((silk_daemon.certificate))
-          client_key: ((silk_daemon.private_key))
-    release: cf-networking-rpi
-  - name: cni
-    release: cf-networking-rpi
-  name: diego-cell-rpi
-  networks:
-  - name: rpinet
-  stemcell: rpi
-  vm_type: rpi-bigdisk
+# - azs:
+#   - rpi
+#   instances: 1
+#   jobs:
+#   - name: cflinuxfs2-rootfs-setup
+#     release: cflinuxfs2-armhf
+#   - name: garden
+#     properties:
+#       garden:
+#         cleanup_process_dirs_on_wait: true
+#         debug_listen_address: 127.0.0.1:17019
+#         default_container_grace_time: 0
+#         deny_networks:
+#         - 0.0.0.0/0
+#         destroy_containers_on_start: true
+#         graph_cleanup_threshold_in_mb: 0
+#         network_plugin: /var/vcap/packages/runc-cni/bin/garden-external-networker
+#         network_plugin_extra_args:
+#         - --configFile=/var/vcap/jobs/garden-cni/config/adapter.json
+#         persistent_image_list:
+#         - /var/vcap/packages/cflinuxfs2/rootfs.tar
+#     release: garden-runc-rpi
+#   - name: rep
+#     properties:
+#       diego:
+#         rep:
+#           bbs:
+#             ca_cert: ((service_cf_internal_ca.certificate))
+#             client_cert: ((diego_bbs_client.certificate))
+#             client_key: ((diego_bbs_client.private_key))
+#           ca_cert: ((service_cf_internal_ca.certificate))
+#           enable_legacy_api_endpoints: false
+#           locket:
+#             api_location: locket.service.cf.internal:8891
+#           preloaded_rootfses:
+#           - cflinuxfs2-armhf:/var/vcap/packages/cflinuxfs2/rootfs.tar
+#           require_tls: true
+#           server_cert: ((diego_rep_agent.certificate))
+#           server_key: ((diego_rep_agent.private_key))
+#       enable_consul_service_registration: false
+#       loggregator:
+#         ca_cert: ((loggregator_ca.certificate))
+#         cert: ((loggregator_tls_metron.certificate))
+#         key: ((loggregator_tls_metron.private_key))
+#         use_v2_api: true
+#       tls:
+#         ca_cert: ((service_cf_internal_ca.certificate))
+#         cert: ((diego_rep_agent.certificate))
+#         key: ((diego_rep_agent.private_key))
+#     release: diego-rpi
+#   - name: cfdot
+#     properties:
+#       tls:
+#         ca_certificate: ((service_cf_internal_ca.certificate))
+#         certificate: ((diego_rep_client.certificate))
+#         private_key: ((diego_rep_client.private_key))
+#     release: diego-rpi
+#   - name: route_emitter
+#     properties:
+#       diego:
+#         route_emitter:
+#           bbs:
+#             ca_cert: ((service_cf_internal_ca.certificate))
+#             client_cert: ((diego_bbs_client.certificate))
+#             client_key: ((diego_bbs_client.private_key))
+#           local_mode: true
+#       loggregator:
+#         ca_cert: ((loggregator_ca.certificate))
+#         cert: ((loggregator_tls_metron.certificate))
+#         key: ((loggregator_tls_metron.private_key))
+#         use_v2_api: true
+#       tcp:
+#         enabled: true
+#       uaa:
+#         ca_cert: ((uaa_ca.certificate))
+#         client_secret: ((uaa_clients_tcp_emitter_secret))
+#     release: diego-rpi
+#   - name: garden-cni
+#     release: cf-networking-rpi
+#   - name: netmon
+#     release: cf-networking-rpi
+#   - name: vxlan-policy-agent
+#     properties:
+#       cf_networking:
+#         vxlan_policy_agent:
+#           ca_cert: ((network_policy_ca.certificate))
+#           client_cert: ((network_policy_client.certificate))
+#           client_key: ((network_policy_client.private_key))
+#     release: cf-networking-rpi
+#   - name: silk-daemon
+#     properties:
+#       cf_networking:
+#         silk_daemon:
+#           ca_cert: ((silk_ca.certificate))
+#           client_cert: ((silk_daemon.certificate))
+#           client_key: ((silk_daemon.private_key))
+#     release: cf-networking-rpi
+#   - name: cni
+#     release: cf-networking-rpi
+#   name: diego-cell-rpi
+#   networks:
+#   - name: rpinet
+#   stemcell: rpi
+#   vm_type: rpi-bigdisk
 
 - azs:
   - lab
@@ -1755,25 +1755,25 @@ releases:
   sha1: 9231b7c7d2f6aa85e0cb77fdeef7add54fdb3f1a
   url: https://bosh.io/d/github.com/cloudfoundry/bosh-dns-release?v=0.2.0
   version: 0.2.0
-- name: garden-runc-rpi
-  version: latest
-- name: diego-rpi
-  version: latest
-- name: cf-networking-rpi
-  version: latest
-- name: cflinuxfs2-armhf
-  version: latest
-- name: loggregator-rpi
-  version: latest
-- name: bosh-dns-rpi
-  version: latest
+# - name: garden-runc-rpi
+#   version: latest
+# - name: diego-rpi
+#   version: latest
+# - name: cf-networking-rpi
+#   version: latest
+# - name: cflinuxfs2-armhf
+#   version: latest
+# - name: loggregator-rpi
+#   version: latest
+# - name: bosh-dns-rpi
+#   version: latest
 stemcells:
 - alias: default
   os: ubuntu-trusty
   version: "3468.19"
-- alias: rpi
-  os: raspbian
-  version: latest
+# - alias: rpi
+#   os: raspbian
+#   version: latest
 update:
   canaries: 1
   canary_watch_time: 30000-1200000
