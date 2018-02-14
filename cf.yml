@@ -17,6 +17,22 @@ addons:
             key: ((loggregator_tls_metron.private_key))
     release: loggregator
   name: metron_agent
+
+- include:
+    stemcell:
+    - os: raspbian
+  jobs:
+  - name: metron_agent
+    properties:
+      loggregator:
+        tls:
+          ca_cert: ((loggregator_ca.certificate))
+          metron:
+            cert: ((loggregator_tls_metron.certificate))
+            key: ((loggregator_tls_metron.private_key))
+    release: loggregator-rpi
+  name: metron_agent
+
 - include:
     stemcell:
     - os: ubuntu-trusty
@@ -80,6 +96,72 @@ addons:
         - '*.uaa.vmnet.cf.bosh'
     release: bosh-dns
   name: bosh-dns
+
+- include:
+    stemcell:
+    - os: raspbian
+  jobs:
+  - name: bosh-dns
+    properties:
+      aliases:
+        _.cell.service.cf.internal:
+        - _.diego-cell.vmnet.cf.bosh
+        - _.windows-cell.vmnet.cf.bosh
+        - _.windows2016-cell.vmnet.cf.bosh
+        - _.isolated-diego-cell.vmnet.cf.bosh
+        auctioneer.service.cf.internal:
+        - '*.scheduler.vmnet.cf.bosh'
+        bbs.service.cf.internal:
+        - '*.diego-api.vmnet.cf.bosh'
+        bits-service.service.cf.internal:
+        - '*.api.vmnet.cf.bosh'
+        blobstore.service.cf.internal:
+        - '*.blobstore.vmnet.cf.bosh'
+        - '*.singleton-blobstore.vmnet.cf.bosh'
+        cc-uploader.service.cf.internal:
+        - '*.api.vmnet.cf.bosh'
+        cf-etcd.service.cf.internal:
+        - '*.etcd.vmnet.cf.bosh'
+        cloud-controller-ng.service.cf.internal:
+        - '*.api.vmnet.cf.bosh'
+        consul.service.cf.internal:
+        - '*.consul.vmnet.cf.bosh'
+        credhub.service.cf.internal:
+        - '*.credhub.vmnet.cf.bosh'
+        doppler.service.cf.internal:
+        - '*.doppler.vmnet.cf.bosh'
+        file-server.service.cf.internal:
+        - '*.api.vmnet.cf.bosh'
+        gorouter.service.cf.internal:
+        - '*.router.vmnet.cf.bosh'
+        locket.service.cf.internal:
+        - '*.diego-api.vmnet.cf.bosh'
+        loggregator-trafficcontroller.service.cf.internal:
+        - '*.log-api.vmnet.cf.bosh'
+        policy-server.service.cf.internal:
+        - '*.api.vmnet.cf.bosh'
+        reverse-log-proxy.service.cf.internal:
+        - '*.log-api.vmnet.cf.bosh'
+        routing-api.service.cf.internal:
+        - '*.api.vmnet.cf.bosh'
+        silk-controller.service.cf.internal:
+        - '*.diego-api.vmnet.cf.bosh'
+        sql-db.service.cf.internal:
+        - '*.mysql.vmnet.cf.bosh'
+        - '*.postgres.vmnet.cf.bosh'
+        - '*.database.vmnet.cf.bosh'
+        ssh-proxy.service.cf.internal:
+        - '*.scheduler.vmnet.cf.bosh'
+        tcp-router.service.cf.internal:
+        - '*.tcp-router.vmnet.cf.bosh'
+        tps.service.cf.internal:
+        - '*.scheduler.vmnet.cf.bosh'
+        uaa.service.cf.internal:
+        - '*.uaa.vmnet.cf.bosh'
+    release: bosh-dns
+  name: bosh-dns-rpi
+
+
 - include:
     stemcell:
     - os: windows2012R2
