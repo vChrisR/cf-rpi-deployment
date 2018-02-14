@@ -158,8 +158,8 @@ addons:
         - '*.scheduler.vmnet.cf.bosh'
         uaa.service.cf.internal:
         - '*.uaa.vmnet.cf.bosh'
-    release: bosh-dns
-  name: bosh-dns-rpi
+    release: bosh-dns-rpi
+  name: bosh-dns
 
 
 - include:
@@ -1771,9 +1771,9 @@ stemcells:
 - alias: default
   os: ubuntu-trusty
   version: "3468.19"
-# - alias: rpi
-#   os: raspbian
-#   version: latest
+- alias: rpi
+  os: raspbian
+  version: latest
 update:
   canaries: 1
   canary_watch_time: 30000-1200000
