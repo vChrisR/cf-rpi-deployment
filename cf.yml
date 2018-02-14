@@ -1517,7 +1517,7 @@ instance_groups:
   networks:
   - name: rpinet
   stemcell: rpi
-  vm_type: rpi
+  vm_type: rpi-bigdisk
 
 - azs:
   - lab
@@ -1768,7 +1768,7 @@ stemcells:
   os: ubuntu-trusty
   version: "3468.19"
 - alias: rpi
-  os: raspbian
+  os: arm-ubuntu-trusty
   version: latest
 update:
   canaries: 1
