@@ -1763,12 +1763,16 @@ releases:
   version: latest
 - name: cflinuxfs2-armhf
   version: latest
+- name: loggregator-rpi
+  version: latest
+- name: bosh-dns-rpi
+  version: latest
 stemcells:
 - alias: default
   os: ubuntu-trusty
   version: "3468.19"
 - alias: rpi
-  os: arm-ubuntu-trusty
+  os: raspbian
   version: latest
 update:
   canaries: 1
